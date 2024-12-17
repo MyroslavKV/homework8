@@ -9,8 +9,8 @@ class Movie(BaseModel):
     id: int = Field()
     title: str
     director: str
-    release_year: int = Field(min_length=1896, max_length=2024)
-    rating: float = Field(min_length=1, max_length=5)
+    release_year: int = Field(ge=1896, le=2024)
+    rating: float = Field(ge=1, le=5)
 
 movies_database = [
     Movie(id=1, title="Alien", director="Ridley Scott", release_year=1979, rating=4.6),
